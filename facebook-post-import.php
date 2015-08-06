@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Facebook Post Import
-Plugin URI:  https://github.com/meistro2k/fb-posts-import
+Plugin URI:  https://github.com/meistro2k/fb-post-import
 Description: Imports Facebook posts and creates them as Wordpress posts
 Version:     0.1
 Author:      Peter Tran

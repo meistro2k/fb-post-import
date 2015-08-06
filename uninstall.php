@@ -2,7 +2,7 @@
 /**
  * Fired when uninstall occurs.
  *
- * @link       http://github.com/meistro2k/fb-posts-import
+ * @link       https://github.com/meistro2k/fb-post-import
  *
  * @package    Facebook_Post_Import
  */

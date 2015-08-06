@@ -2,7 +2,7 @@
 /**
  * Admin functionality of the plugin.
  *
- * @link       http://github.com/meistro2k/fb-posts-import
+ * @link       http://github.com/meistro2k/fb-post-import
  *
  * @package    Facebook_Post_Import
  * @subpackage Facebook_Post_Import/admin
@@ -60,6 +60,29 @@ class Facebook_Post_Import_Admin {
 
         echo Facebook_Post_Import_View_Model::render(
             'admin/partials/facebook-post-import-admin-partial.php'
+        );
+    }
+
+    /**
+     * Process importing of the feed
+     */
+    public function process_import()
+    {
+        $url = $_POST['feed_url'];
+
+        // TODO: Use cURL to fetch URL and get the JSON data.
+        $facebook_json_data = isset($url) ? Facebook_Post_Import_Fetch_Service::get_feed_data($url) : null;
+
+        if (is_wp_error ($facebook_json_data)) {
+            wp_die('No feed found');
+        }
+
+        $handler = new Facebook_Post_Import_Handler();
+        $result = $handler->import($facebook_json_data);
+
+        echo Facebook_Post_Import_View_Model::render(
+            'admin/partials/facebook-post-import-process-import-partial.php',
+            $result
         );
     }
 }

@@ -2,7 +2,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://github.com/meistro2k/facebook-posts-import
+ * @link       http://github.com/meistro2k/fb-post-import
  *
  * @package    Facebook_Post_Import
  * @subpackage Facebook_Post_Import/includes
